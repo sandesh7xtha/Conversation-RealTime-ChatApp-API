@@ -34,11 +34,18 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
-    // origin: "https://acd9-27-34-17-227.ngrok-free.app",
+    // origin: "http://localhost:3000",
+    origin: "https://conversation-ea834.web.app",
     credentials: true,
   },
 });
+
+// const io = socket("https://21ae-27-34-17-227.ngrok-free.app", {
+//   cors: {
+//     origin: "https://conversation-ea834.web.app",
+//     credentials: true,
+//   },
+// });
 
 global.onlineUsers = new Map();
 io.on("connection", (socket) => {
